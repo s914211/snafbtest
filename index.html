@@ -5,17 +5,45 @@
 <head>
     <meta charset="UTF-8">
     <title>臉書API實驗</title>
-
-    <!-- <link href="stylesheets/index.css" rel="stylesheet" />
-    <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
-    <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html"> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     <script src="/index.js"></script>
 </head>
 
 <body>
+    <div id="my-html-playground" class="container">
+        <div id="my-login-control" class="well">
+            <button id="my-login-button" class="btn btn-primary">Login with Facebook</button>
+            <p id="my-login-message"></p>
+        </div>
 
+        <div id="my-profile" class="row">
+            <div class="col-md-3">
+                <!-- Profile Picture -->
+                <img id="my-profile-picture" class="img-thumbnail" src="" alt="">
+            </div>
+            <div class="col-md-9">
+                <!-- Profile Information -->
+                <dl class="dl-horizontal">
+                    <dt>Name</dt>
+                    <dd id="my-profile-name"></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Gender</dt>
+                    <dd id="my-profile-gender"></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Username</dt>
+                    <dd id="my-profile-username"></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Facebook ID</dt>
+                    <dd id="my-profile-facebook-id"></dd>
+                </dl>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
