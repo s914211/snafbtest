@@ -30,13 +30,13 @@
                   alert("User signed up and logged in through Facebook!");
                 } else {
                   alert("User logged in through Facebook!");
+                  window.fbLoaded();
                 }
               },
               error: function(user, error) {
                 alert("User cancelled the Facebook login or did not fully authorize.");
               }
             });
-            window.fbLoaded();
           };
          
           (function(d, s, id){
