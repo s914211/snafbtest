@@ -47,7 +47,18 @@
                     });
 
                     $("#my-login-button").click(function(){
-                        fb.login();
+                        Parse.FacebookUtils.logIn(null, {
+                          success: function(user) {
+                            if (!user.existed()) {
+                              alert("User signed up and logged in through Facebook!");
+                            } else {
+                              alert("User logged in through Facebook!");
+                            }
+                          },
+                          error: function(user, error) {
+                            alert("User cancelled the Facebook login or did not fully authorize.");
+                          }
+                        });
                     });
 
                     $("#logout").click(function(){
@@ -87,22 +98,6 @@
 
                     };
                 }
-
-                var fblogin = function(){
-                    Parse.FacebookUtils.logIn(null, {
-                      success: function(user) {
-                        if (!user.existed()) {
-                          alert("User signed up and logged in through Facebook!");
-                        } else {
-                          alert("User logged in through Facebook!");
-                        }
-                      },
-                      error: function(user, error) {
-                        alert("User cancelled the Facebook login or did not fully authorize.");
-                      }
-                    });
-                }
-
     </script>
     <div id="my-html-playground" class="container">
         <div id="my-login-control" class="well">
