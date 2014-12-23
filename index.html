@@ -51,7 +51,13 @@
                     });
 
                     $("#logout").click(function(){
-                        FB.logout();
+                        FB.getLoginStatus(function(response) {
+                            if (response && response.status === 'connected') {
+                                FB.logout(function(response) {
+                                    document.location.reload();
+                                });
+                            }
+                        });
                     });
 
                     var fetch_my_profile = function () {
