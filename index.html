@@ -82,6 +82,11 @@
 
                             $("#my-profile-picture").attr('src', my_picture_url);
                         });
+
+                        FB.api('/me/friends', function(response){
+                            console.log(response);
+                        })
+
                     };
                 }
     </script>
