@@ -12,9 +12,6 @@ $(document).ready(function(){
                     $("#my-login-button").click(function(){
                         Parse.FacebookUtils.logIn(null, {
                           success: function(user) {
-                            console.log(user);
-                            console.log(user.get('facebook').get('id'));
-                            console.log(user.get('authData').get('facebook').get('id'));   
                             if (!user.existed()) {
                               alert("User signed up and logged in through Facebook!");
                             } else {
