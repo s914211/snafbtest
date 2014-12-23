@@ -62,6 +62,10 @@
                         FB.login();
                     });
 
+                    $("#logout").click(function(){
+                        FB.logOut();
+                    });
+
                     var fetch_my_profile = function () {
                         FB.api('/me', function(response) {
                             console.log(response);
@@ -93,6 +97,7 @@
     <div id="my-html-playground" class="container">
         <div id="my-login-control" class="well">
             <button id="my-login-button" class="btn btn-primary">Login with Facebook</button>
+            <button id="logout">Logout</button>
             <p id="my-login-message"></p>
         </div>
 
