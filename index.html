@@ -62,13 +62,19 @@
                     });
 
                     $("#logout").click(function(){
-                        FB.getLoginStatus(function(response) {
-                            if (response && response.status === 'connected') {
-                                FB.logout(function(response) {
-                                    document.location.reload();
-                                });
-                            }
+                        Parse.User.logOut();
+                        FB.logout(function (){
+                            alert("登出成功 :))");
+                            window.location="index.html";
+                            
                         });
+                        // FB.getLoginStatus(function(response) {
+                        //     if (response && response.status === 'connected') {
+                        //         FB.logout(function(response) {
+                        //             document.location.reload();
+                        //         });
+                        //     }
+                        // });
                     });
 
                     var fetch_my_profile = function () {
