@@ -22,18 +22,6 @@ $(document).ready(function(){
                             $('#myfriends').html(response.data[0].name);
                         }
                     });
-                    console.log(Parse.User.current());
-
-                    var users = Parse.Object.extend('User');
-                    var query = new Parse.Query(users);
-                    query.find({
-                        success:function(userdata){
-                            for(var i = 0; i<=userdata.length; i++){
-                                console.log(userdata[i].get('authData'));
-                            }
-                        }
-                    })
-
     };
     $("#my-login-button").click(function(){
         Parse.FacebookUtils.logIn("user_friends", {
@@ -42,6 +30,7 @@ $(document).ready(function(){
                     alert("User signed up and logged in through Facebook!");
                 } 
                 else{
+                    console.log(user);
                     alert("User logged in through Facebook!");
                     fetch_my_profile();
                 }
