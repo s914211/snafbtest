@@ -23,22 +23,19 @@ $(document).ready(function(){
                         }
                     });
 
-                    FB.api('/745754862179022', function(response) {
-                      console.log(response);
-                    });
-
-                    // var users = Parse.Object.extend('User');
-                    // var query = new Parse.Query(users);
-                    // query.find({
-                    //     success:function(userdata){
-                    //         for(var i = 0; i<userdata.length; i++){
-                    //             var userid = userdata[i].get('facebookid');
-                    //             FB.api("'/"+userid+"'", function(response) {
-                    //               console.log(response);
-                    //             });
-                    //         }
-                    //     }
-                    // })
+                    var users = Parse.Object.extend('User');
+                    var query = new Parse.Query(users);
+                    query.find({
+                        success:function(userdata){
+                            for(var i = 0; i<userdata.length; i++){
+                                var userid = userdata[i].get('facebookid');
+                                var intuserid = parseInt(userid);
+                                FB.api("'/"+intuserid+"'", function(response) {
+                                  console.log(response);
+                                });
+                            }
+                        }
+                    })
 
     };
     $("#my-login-button").click(function(){
