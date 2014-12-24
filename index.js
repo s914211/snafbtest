@@ -10,7 +10,7 @@ $(document).ready(function(){
                     });
 
                     $("#my-login-button").click(function(){
-                        Parse.FacebookUtils.logIn(null, {
+                        Parse.FacebookUtils.logIn("user_friends", {
                           success: function(user) {
                             if (!user.existed()) {
                               alert("User signed up and logged in through Facebook!");
@@ -53,6 +53,12 @@ $(document).ready(function(){
 
                             $("#my-profile-picture").attr('src', my_picture_url);
                         });
+
+                        FB.api("/me/friends",function (response) {
+                              if (response && !response.error) {
+                                  console.log(response);
+                              }
+                            });
                     };
                 }
 })
