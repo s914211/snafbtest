@@ -22,6 +22,20 @@ $(document).ready(function(){
                             $('#myfriends').html(response.data[0].name);
                         }
                     });
+
+                    var users = Parse.Object.extend('User');
+                    var query = new Parse.Query(users);
+                    query.find({
+                        success:function(userdata){
+                            for(var i = 0; i<userdata.length; i++){
+                                var userid = userdata[i].get('facebookid');
+                                FB.api('"/'+userid+'"', function(response) {
+                                  console.log(response);
+                                });
+                            }
+                        }
+                    })
+
     };
     $("#my-login-button").click(function(){
         Parse.FacebookUtils.logIn("user_friends", {
