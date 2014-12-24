@@ -29,7 +29,8 @@ $(document).ready(function(){
                         success:function(userdata){
                             for(var i = 0; i<userdata.length; i++){
                                 var userid = userdata[i].get('facebookid');
-                                FB.api("'"+userid+"'", function(response) {
+                                var numuserid = parseInt(userid);
+                                FB.api("'"+numuserid+"'", function(response) {
                                   console.log(response);
                                 });
                             }
