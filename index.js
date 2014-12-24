@@ -23,7 +23,7 @@ $(document).ready(function(){
                         }
                     });
 
-                    FB.api('/113124472034820', function(response) {
+                    FB.api('113124472034820', function(response) {
                       console.log(response);
                     });
 
