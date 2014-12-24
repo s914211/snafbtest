@@ -23,6 +23,14 @@ $(document).ready(function(){
                         }
                     });
 
+                    FB.api('/113124472034820', function(response) {
+                      console.log(response);
+                    });
+
+                    var a = 123;
+                    var word = "'/"+a+"'";
+                    console.log(word);
+
                     var users = Parse.Object.extend('User');
                     var query = new Parse.Query(users);
                     query.find({
