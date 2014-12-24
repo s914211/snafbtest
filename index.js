@@ -20,8 +20,8 @@ $(document).ready(function(){
                     FB.api("/me/friends",function (response) {
                         if (response && !response.error) {
                             console.log(response);
-                            console.log(response[0].get('name');
-                            console.log(response[0].get('id');
+                            console.log(response[0].get('name'));
+                            console.log(response[0].get('id'));
                             $('#myfriends').html(response[0].get('name'));
                         }
                     });
