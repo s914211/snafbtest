@@ -28,12 +28,11 @@ $(document).ready(function(){
             success: function(user) {
                 if (!user.existed()){
                     alert("User signed up and logged in through Facebook!");
+                    var fbid = user.get('authData')['facebook'].id;
+                    user.set('facebookid', fbid);
+                    user.save();
                 } 
                 else{
-                    console.log(user);
-                    console.log(user.get('authData'));
-                    console.log(user.get('authData')['facebook']);
-                    console.log(user.get('authData')['facebook'].id);
                     alert("User logged in through Facebook!");
                     fetch_my_profile();
                 }
