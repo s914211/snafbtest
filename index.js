@@ -19,11 +19,8 @@ $(document).ready(function(){
                     });
                     FB.api("/me/friends",function (response) {
                         if (response && !response.error) {
-                            console.log(response);
-                            console.log(response[0]);
-                            console.log(response[0].name);
-                            console.log(response[0].id);
-                            $('#myfriends').html(response[0].name);
+                            console.log(response.data[0].name);
+                            $('#myfriends').html(response.data[0].name);
                         }
                     });
     };
