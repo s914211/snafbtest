@@ -19,7 +19,7 @@ $(document).ready(function(){
                     });
                     FB.api("/me/friends",function (response) {
                         if (response && !response.error) {
-                            console.log(response);
+                            $('#myfriends').html(response.name);
                         }
                     });
     };
