@@ -43,6 +43,7 @@ $(document).ready(function(){
                               alert("User signed up and logged in through Facebook!");
                             } else {
                               alert("User logged in through Facebook!");
+                              fetch_my_profile();
                             }
                           },
                           error: function(user, error) {
