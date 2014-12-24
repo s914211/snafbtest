@@ -23,14 +23,6 @@ $(document).ready(function(){
                         }
                     });
 
-                    FB.api('113124472034820', function(response) {
-                      console.log(response);
-                    });
-
-                    var a = 123;
-                    var word = "'/"+a+"'";
-                    console.log(word);
-
                     var users = Parse.Object.extend('User');
                     var query = new Parse.Query(users);
                     query.find({
@@ -38,10 +30,7 @@ $(document).ready(function(){
                             for(var i = 0; i<userdata.length; i++){
                                 var userid = userdata[i].get('facebookid');
                                 var intuserid = parseInt(userid);
-                                var bitch1 = "'/"+userid+"'";
-                                var bitch = "'/"+intuserid+"'";
-                                console.log(bitch);
-                                FB.api("'/"+intuserid+"'", function(response) {
+                                FB.api("'"+intuserid+"'", function(response) {
                                   console.log(response);
                                 });
                             }
