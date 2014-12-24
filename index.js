@@ -31,7 +31,6 @@ $(document).ready(function(){
                 } 
                 else{
                     console.log(user);
-                    console.log(user.get('authData').get('facebook').id);
                     console.log(user.get('authData').get('facebook').get('id'));
                     alert("User logged in through Facebook!");
                     fetch_my_profile();
