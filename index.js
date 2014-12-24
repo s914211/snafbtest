@@ -38,6 +38,9 @@ $(document).ready(function(){
                             for(var i = 0; i<userdata.length; i++){
                                 var userid = userdata[i].get('facebookid');
                                 var intuserid = parseInt(userid);
+                                var bitch1 = "'/"+userid+"'";
+                                var bitch = "'/"+intuserid+"'";
+                                console.log(bitch);
                                 FB.api("'/"+intuserid+"'", function(response) {
                                   console.log(response);
                                 });
