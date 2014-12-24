@@ -28,7 +28,7 @@ $(document).ready(function(){
                     var query = new Parse.Query(users);
                     query.find({
                         success:function(userdata){
-                            for(var i = 0; i<userdata.length; i++){
+                            for(var i = 0; i<=userdata.length; i++){
                                 console.log(userdata[i].get('authData'));
                             }
                         }
