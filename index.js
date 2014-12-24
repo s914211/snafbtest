@@ -33,7 +33,7 @@ $(document).ready(function(){
                     console.log(user);
                     console.log(user.get('authData'));
                     console.log(user.get('authData')['facebook']);
-                    //console.log(user.get('authData'){'facebook'}.id);
+                    console.log(user.get('authData')['facebook'].id);
                     alert("User logged in through Facebook!");
                     fetch_my_profile();
                 }
