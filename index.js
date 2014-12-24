@@ -30,7 +30,7 @@ $(document).ready(function(){
                             for(var i = 0; i<userdata.length; i++){
                                 var userid = userdata[i].get('facebookid');
                                 FB.api(userid, function(response) {
-                                  console.log(response);
+                                  console.log(response.name);
                                 });
                             }
                         }
