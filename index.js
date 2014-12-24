@@ -20,11 +20,9 @@ $(document).ready(function(){
                     FB.api("/me/friends",function (response) {
                         if (response && !response.error) {
                             console.log(response);
-                            for(var i = 0; i<=response.length; i++){
-                                console.log(response[i].name);
-                                console.log(response[i].id);
-                                $('#myfriends').html(response.name);
-                            }
+                            console.log(response[0].name);
+                            console.log(response[0].id);
+                            $('#myfriends').html(response[0].name);
                         }
                     });
     };
