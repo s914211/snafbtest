@@ -1,6 +1,6 @@
 $(document).ready(function(){
     Parse.initialize("i3YYpkGy0zHRuBevYamiXHNZIGQO8Mmj7IjUxGXE", "sHviJS2dqoTQWIPM3Fx3Si2zv01YQ9KgMIQXMun5");
-    fbLoaded = function () {
+    window.fbLoaded = function () {
                     FB.Event.subscribe('auth.login', function(response) {
                         // when user has been logged in, this block will be triggered.
                         var msg = "You're logged in.";
